@@ -1,0 +1,756 @@
+<html><head><!-- Update History:--><!--                98.10.28 - Page Created--><!--                98.11.01 - Added Engineering Resource Web Pages--><!--                98.11.02 - Added LCD Graphic--><!--                99.04.20 - Fixed Some Errors--><!--                         - Added 2 Wire LCD Schematic/Operation--><!--                         - Added Different Display Addressing--><!--                99.04.28 - Added Hitachi .PDF File--><!--                         - Added Screen Movement and User Defined Characters--><!--                99.05.05 - Added LCD Default Characer Set--><!--                99.05.22 - Put in Better LCD Default Character Set--><!--                         - Note that the edge in Falling Edge Active--><!--                00.01.20 - Updated for New 44780 URL--><!--                00.10.01 - Updated with Reference to Peer Ouwehand's page--><!--                         - Added Psuedo-Code for the 2 Wire Interface--><!--                00.12.14 - Updated to the New Web Page Format--><!--                01.04.24 - Updated to New Page Format--><script language="JavaScript"></script><style type="text/css">
+A.linktext:link {color:blue; font-weight:bold; text-decoration:none;}
+A.linktext:visited {color:#0000C0; font-weight:bold; text-decoration:none;}
+A.linktext:hover {color:red; font-weight:bold; text-decoration:none;}
+A.maintext:link {color:yellow; font-weight:bold; text-decoration:none;}
+A.maintext:visited {color:yellow; font-weight:bold; text-decoration:none;}
+A.maintext:hover {color:red; font-weight:bold; text-decoration:none;}
+A.lefttext:link {color:white; font-weight:bold; font-size:16; text-decoration:none;}
+A.lefttext:visited {color:white; font-weight:bold; font-size:16; text-decoration:none;}
+A.lefttext:hover {color:red; font-weight:bold; font-size:16; text-decoration:none;}
+</style></head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body topmargin="3" leftmargin="3" style="font-family: Arial;" bgcolor="#ffffff" link="#9805ff" text="#000000">
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td bgcolor="#b0b0b0">
+        <img src="lcd_files/info.gif" alt="Updated: 01.04.24" align="right">
+        <p align="left"><a target="mainFrame" class="maintext" href="http://www.myke.com/main.htm">Main</a> -&gt; 
+        <a target="mainFrame" class="lefttext" href="http://www.myke.com/tech.htm">Tech</a> -&gt; 
+        <a target="mainFrame" class="lefttext" href="http://www.myke.com/engres.htm">Electrical Engineering</a> -&gt; <b>44780 LCD</b>
+      </p></td>
+    </tr>
+  </tbody></table>
+
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="center"><b>44780 LCD</b></td>
+      <td align="center"><a class="linktext" target="mainFrame" href="http://www.myke.com/umps.htm">UMPS</a></td>
+      <td align="center"><a class="linktext" target="mainFrame" href="http://www.myke.com/engweb.htm">Web Pages</a></td>
+      
+    </tr>
+  </tbody></table>
+
+  <h2>LCD Interfacing Reference Page</h2>
+            <img src="lcd_files/lcd2.jpg" alt="Example LCD Output" cellpadding="10" align="right" border="0">
+            <p align="left">LCDs can add a lot to your application in terms of providing an 
+            useful interface for the user, debugging an application or just giving it a 
+            "professional" look.  The most common
+            type of LCD controller is the Hitatchi 44780 which provides a relatively simple
+            interface between a processor and an LCD.  Using this interface is often not 
+            attempted by inexperienced designers and programmers because it is difficult to 
+            find good documentation on the interface, initializing the interface can be a 
+            problem and the displays themselves are expensive.  </p><p>
+            <table align="right" border="1" cellpadding="10">
+              <tbody><tr>
+                <td bgcolor="#ffffff"><p align="left">Click
+                          <a target="_blank" class="linktext" href="http://semiconductor.hitachi.com/products/pdf/99rtd006d2.pdf">here</a>
+                          to download Hitachi's<br> 44780
+                          datasheet in "PDF" Format.
+                </p></td>
+              </tr>
+            </tbody></table>
+            </p><p align="left">I have worked with Hitatchi 44780 based LCDs for a while now and I 
+            have to say that I don't believe any of these perceptions.  LCDs can be added quite
+            easily to an application and use as few as three digital output pins for control.  
+            As for cost, LCDs can be often pulled out of old devices or found in surplus 
+            stores for less than a dollar.  </p><p>
+            </p><p align="left">The purpose of this page is to give a brief tutorial on how to 
+            interface with Hitatchi 44780 based LCDs.  I have tried to provide the all the 
+            data necessary for successfully adding LCDs to your application.  </p><p>
+            </p><p align="left">The most common connector used for the 44780 based LCDs is 14 pins 
+            in a row, with pin centers 0.100" apart.  The pins are wired as:  </p><p>
+            <table border="1" width="100%">
+              <tbody><tr>
+                <th>Pins</th>
+                <th>Description</th>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">1</td>
+                <td>Ground</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">2</td>
+                <td>Vcc</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">3</td>
+                <td>Contrast Voltage</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">4</td>
+                <td>"R/S" _Instruction/Register Select</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">5</td>
+                <td>"R/W" _Read/Write LCD Registers</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">6</td>
+                <td>"E" Clock</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">7 - 14</td>
+                <td>Data I/O Pins</td>
+              </tr>
+            </tbody></table>
+            </p><p align="left">As you would probably guess from this description, the interface 
+            is a parallel bus, allowing simple and fast reading/writing of data to and 
+            from the LCD.  </p><p>
+            </p><p align="left">This waveform will write an ASCII Byte out to the LCD's screen.  
+            The ASCII code to be displayed is eight bits long and is sent to the LCD either 
+            <img src="lcd_files/lcdwf.gif" align="right" border="0">
+            four or eight bits at a time.  If four bit mode is used, two "nybbles" of data 
+            (Sent high four bits and then low four bits with an "E" Clock pulse with each 
+            nybble) are sent to make up a full eight bit transfer.  The "E" Clock is used to 
+            initiate the data transfer within the LCD.  </p><p>
+            </p><p align="left">Sending parallel data as either four or eight bits are the two 
+            primary modes of operation.  While there are secondary considerations and modes, 
+            deciding how to send the data to the LCD is most critical decision to be made 
+            for an LCD interface application.  </p><p>
+            </p><p align="left">Eight bit mode is best used when speed is required in an 
+            application and at least ten I/O pins are available.  Four bit mode requires a 
+            minimum of six bits.  To wire a microcontroller to an LCD in four bit mode, just 
+            the top four bits (DB4-7) are written to.  </p><p>
+            </p><p align="left">The "R/S" bit is used to select whether data or an instruction 
+            is being transferred between the microcontroller and the LCD.  If the Bit is set, 
+            then the byte at the current LCD "Cursor" Position can be read or written.  When 
+            the Bit is reset, either an instruction is being sent to the LCD or the 
+            execution status of the last instruction is read back (whether or not it has 
+            completed).  </p><p>
+            </p><p align="left">The different instructions available for use with the 44780 are
+            shown in the table below:  </p><p>
+            <table border="1" width="100%">
+              <tbody><tr>
+                <th>R/S</th>
+                <th>R/W</th>
+                <th>D7</th>
+                <th>D6</th>
+                <th>D5</th>
+                <th>D4</th>
+                <th>D3</th>
+                <th>D2</th>
+                <th>D1</th>
+                <th>D0</th>
+                <th>Instruction/Description</th>
+              </tr>
+              <tr>
+                <td align="center">4</td>
+                <td align="center">5</td>
+                <td align="center">14</td>
+                <td align="center">13</td>
+                <td align="center">12</td>
+                <td align="center">11</td>
+                <td align="center">10</td>
+                <td align="center">9</td>
+                <td align="center">8</td>
+                <td align="center">7</td>
+                <td>Pins</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td>Clear Display</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">*</td>
+                <td>Return Cursor and LCD to Home Position</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">ID</td>
+                <td align="center">S</td>
+                <td>Set Cursor Move Direction</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">D</td>
+                <td align="center">C</td>
+                <td align="center">B</td>
+                <td>Enable Display/Cursor</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">SC</td>
+                <td align="center">RL</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td>Move Cursor/Shift Display</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">DL</td>
+                <td align="center">N</td>
+                <td align="center">F</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td>Set Interface Length</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td>Move Cursor into CGRAM</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td align="center">A</td>
+                <td>Move Cursor to Display</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">0</td>
+                <td align="center">1</td>
+                <td align="center">BF</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td align="center">*</td>
+                <td>Poll the "Busy Flag"</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">1</td>
+                <td align="center">0</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td>Write a Character to the Display at the Current Cursor Position</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">1</td>
+                <td align="center">1</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td align="center">D</td>
+                <td>Read the Character on the Display at the Current Cursor Position</td>
+              </tr>
+            </tbody></table>
+            </p><p align="left">The bit descriptions for the different commands are:
+            </p><pre>"*" - Not Used/Ignored.  This bit can be either "1" or "0"
+
+Set Cursor Move Direction:
+  ID - Increment the Cursor After Each Byte Written to Display if Set
+   S - Shift Display when Byte Written to Display
+
+Enable Display/Cursor
+   D - Turn Display On(1)/Off(0)
+   C - Turn Cursor On(1)/Off(0)
+   B - Cursor Blink On(1)/Off(0)
+
+Move Cursor/Shift Display
+  SC - Display Shift On(1)/Off(0)
+  RL - Direction of Shift Right(1)/Left(0)
+
+Set Interface Length
+  DL - Set Data Interface Length 8(1)/4(0)
+   N - Number of Display Lines 1(0)/2(1)
+   F - Character Font 5x10(1)/5x7(0)
+
+Poll the "Busy Flag"
+  BF - This bit is set while the LCD is processing 
+
+Move Cursor to CGRAM/Display
+   A - Address
+
+Read/Write ASCII to the Display
+   D - Data 
+            </pre>  
+            <p align="left">Reading Data back is best used in applications which required 
+            data to be moved back and forth on the LCD (such as in applications which scroll 
+            data between lines).  The "Busy Flag" can be polled to determine when the last 
+            instruction that has been sent has completed processing.  In most applications, I 
+            just tie the "R/W" line to ground because I don't read anything back.  This 
+            simplifies the application because when data is read back, the microcontroller 
+            I/O pins have to be alternated between input and output modes.  </p><p>
+            </p><p align="left">For most applications, there really is no reason to read from 
+            the LCD.  I usually tie "R/W" to ground and just wait the maximum amount of time 
+            for each instruction (4.1 msecs for clearing the display or moving the cursor/display
+            to the "home position", 160 usecs for all other commands).  As well as making my 
+            application software simpler, it also frees up a microcontroller pin for other uses.  
+            Different LCDs execute instructions at different rates and to avoid problems later
+            on (such as if the LCD is changed to a slower unit), I recommend just using the 
+            maximum delays given above.  </p><p>
+            </p><p align="left">In terms of options, I have never seen a 5x10 LCD display.  This 
+            means that the "F" bit in the "Set Interface Instruction" should always be reset 
+            (equal to "0").  </p><p>
+            </p><p align="left">Before you can send commands or data to the LCD module, the 
+            Module must be initialized.  For eight bit mode, this is done using the following 
+            series of operations:
+            </p><ol>
+              <li>Wait more than 15 msecs after power is applied.  
+              </li><li>Write 0x030 to LCD and wait 5 msecs for the instruction to complete
+              </li><li>Write 0x030 to LCD and wait 160 usecs for instruction to complete
+              </li><li>Write 0x030 AGAIN to LCD and wait 160 usecs or Poll the Busy Flag
+              </li><li>Set the Operating Characteristics of the LCD
+              <ul>
+                <li>Write "Set Interface Length" 
+                </li><li>Write 0x010 to turn off the Display 
+                </li><li>Write 0x001 to Clear the Display
+                </li><li>Write "Set Cursor Move Direction" Setting Cursor Behaviour Bits
+                </li><li>Write "Enable Display/Cursor" &amp; enable Display and Optional Cursor
+              </li></ul>
+            </li></ol>
+            <p align="left">In describing how the LCD should be initialized in four bit mode, 
+            I will specify writing to the LCD in terms of nybbles.  This is because initially, 
+            just single nybbles are sent (and not two, which make up a byte and a full 
+            instruction).  As I mentioned above, when a byte is sent, the high nybble is sent 
+            before the low nybble and the "E" pin is toggled each time four bits is sent to 
+            the LCD.  To initialize in four bit mode:
+            </p><ol>
+              <li>Wait more than 15 msecs after power is applied.  
+              </li><li>Write 0x03 to LCD and wait 5 msecs for the instruction to complete
+              </li><li>Write 0x03 to LCD and wait 160 usecs for instruction to complete
+              </li><li>Write 0x03 AGAIN to LCD and wait 160 usecs (or poll the Busy Flag)
+              </li><li>Set the Operating Characteristics of the LCD
+              <ul>
+                <li>Write 0x02 to the LCD to Enable Four Bit Mode
+                <p align="left"><b>All following instruction/Data Writes require two nybble 
+                writes.  </b></p><p>
+                </p></li><li>Write "Set Interface Length" 
+                </li><li>Write 0x01/0x00 to turn off the Display
+                </li><li>Write 0x00/0x01 to Clear the Display
+                </li><li>Write "Set Cursor Move Direction" Setting Cursor Behaviour Bits
+                </li><li>Write "Enable Display/Cursor" &amp; enable Display and Optional Cursor
+              </li></ul>
+            </li></ol>
+            <p align="left">Once the initialization is complete, the LCD can be written to 
+            with data or instructions as required.  Each character to display is written like
+            the control bytes, except that the "R/S" line is set.  During initializiation, by
+            setting the "S/C" bit during the "Move Cursor/Shift Display" command, after each
+            character is sent to the LCD, the cursor built into the LCD will increment to the 
+            next position (either right or left).  Normally, the "S/C" bit is set (equal to "1")
+            along with the "R/L" bit in the "Move Cursor/Shift Display" command for characters
+            to be written from left to right (as with a "Teletype" video display).  </p><p>
+            </p><p align="left">One area of confusion is how to move to different locations on the 
+            display and, as a follow on, how to move to different lines on an LCD display.  
+            The following table shows how different LCD displays that use a single 44780 can be
+            set up with the addresses for specific character locations.  The LCDs listed are 
+            the most popular arrangements available and the "Layout" is given as number of 
+            columns by number of lines:  </p><p>
+            <table border="1" width="100%">
+              <tbody><tr>
+                <th>LCD Layout</th>
+                <th>Top Left Character</th>
+                <th>Ninth Character</th>
+                <th>Second Line</th>
+                <th>Third Line</th>
+                <th>Fourth Line</th>
+                <th>Comments</th>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">8x1</td>
+                <td align="center">0</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">Single 44780/No Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">16x1</td>
+                <td align="center">0</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">Single 44780/No Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">16x1</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip.  This is quite rare</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">8x2</td>
+                <td align="center">0</td>
+                <td align="center">N/A</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">Single 44780/No Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">10x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">16x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">20x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">24x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">30x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">32x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">40x2</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">N/A</td>
+                <td align="center">N/A</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">16x4</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">0x020</td>
+                <td align="center">0x060</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">20x4</td>
+                <td align="center">0</td>
+                <td align="center">8</td>
+                <td align="center">0x040</td>
+                <td align="center">0x020</td>
+                <td align="center">0x060</td>
+                <td align="center">44780 with Support Chip</td>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">40x4</td>
+                <td align="center">U/N</td>
+                <td align="center">U/N</td>
+                <td align="center">U/N</td>
+                <td align="center">U/N</td>
+                <td align="center">U/N</td>
+                <td align="center">Two 44780 with Support Chips.  Addressing is device specific</td>
+              </tr>
+            </tbody></table>
+            </p><p align="left">The "Ninth Character" is the position of the Ninth character on the 
+            first line.  
+            </p><p align="left">Most LCD displays have a 44780 and support chip to control the 
+            operation of the LCD.  The 44780 is responsible for the external interface and 
+            provides sufficient control lines for sixteen characters on the LCD.  The support
+            chip enhances the I/O of the 44780 to support up to 128 characters on an LCD.  From
+            the table above, it should be noted that the first two entries ("8x1", "16x1") only
+            have the 44780 and not the support chip.  This is why the ninth character in the 
+            16x1 does not "appear" at address 8 and shows up at the address that is common for
+            a two line LCD.  </p><p>
+            </p><p align="left">I've included the 40 character by 4 line ("40x4") LCD because it is 
+            quite common.  Normally, the LCD is wired as two 40x2 displays.  The actual connector
+            is normally sixteen bits wide with all the fourteen connections of the 44780 in 
+            common, except for the "E" (Strobe) pins.  The "E" strobes are used to address 
+            between the areas of the display used by the two devices.  The actual pinouts and character addresses for
+            this type of display can vary between manufacturers and display part numbers.  </p><p>
+            </p><p align="left">Note that when using any kind of multiple 44780 LCD display, you 
+            should probably only display one 44780's Cursor at a time.  </p><p>
+            </p><p align="left">Cursors for the 44780 can be turned on as a simple 
+            underscore at any time using the "Enable Display/Cursor" LCD instruction and setting
+            the "C" bit.  I don't recommend using the "B" ("Block Mode") bit as this causes a 
+            flashing full character square to be displayed and it really isn't that attractive.  </p><p>
+            <img src="lcd_files/lcd_move.gif" align="right" border="0">
+            </p><p align="left">The LCD can be thought of as a "Teletype" display because in normal
+            operation, after a character has been sent to the LCD, the internal "Cursor" is 
+            moved one character to the right.  The "Clear Display" and "Return Cursor and LCD
+            to Home Position" instructions are used to reset the Cursor's position to the top
+            right character on the display.  </p><p>
+            </p><p align="left">To move the Cursor, the "Move Cursor to Display" instruction is 
+            used.  For this instruction, bit 7 of the instruction byte is set with the remaining
+            seven bits used as the address of the character on the LCD the cursor is to move to.
+            These seven bits provide 128 addresses, which matches the maximum number of LCD 
+            character addresses available.  The table above should be used to determine the 
+            address of a character offset on a particular line of an LCD display.  </p><p>
+            </p><p align="left">The Character Set available in the 44780 is basically ASCII.  I 
+            say "basically" because some characters do not follow the ASCII convention fully 
+            (probably the most significant difference is 0x05B or "\" is not available).  The 
+            ASCII Control Characters (0x008 to 0x01F) do not respond as control characters and 
+            may display funny (Japanese) characters.  The LCD Character Set shown below is 
+            courtesy of Peer Ouwehand and his excellent 
+            <a target="_blank" class="linktext" href="http://home.iae.nl/users/pouweha/lcd/lcd.shtml">LCD page</a>: </p><p>
+            <img src="lcd_files/lcd-ch1a.gif" border="0">
+            </p><p align="left">Eight programmable characters are available and use codes 0x000 
+            to 0x007.  They are programmed by pointing the LCD's "Cursor" to the Character 
+            <img src="lcd_files/lcd_uf.gif" align="right" border="0">
+            Generator RAM ("CGRAM") Area at eight times the character address.  The next 
+            eight characters written to the RAM are each line of the programmable character, 
+            starting at the top.  </p><p>
+            </p><p align="left">I like to represent this as eight squares by five as is shown in
+            the diagram to the right.  Above, I noted that most displays were 7 pixels by 5 for
+            each character, so the extra row may be confusing.  Each LCD character is actually
+            eight pixels high, with the bottom row normally used for the underscore cursor.  
+            The bottom row can be used for graphic characters, although if you are going to 
+            use a visible underscore cursor and have it at the character, I recommend that you 
+            don't use it (ie set the line to 0x000).  </p><p>
+            </p><p align="left">Using this box, you can draw in the pixels that define your 
+            special character and then use the bits to determine what the actual data codes are.
+            When I do this, I normally use a piece of graph paper and then write hex codes for
+            each line, as I show in the lower right diagram.  This diagram shows
+            the first character used in the "Walking Man" "Animate" examples that can be found
+            below.  </p><p>
+            </p><p align="left">For the "Animate" applications, I use "character" rotation for the 
+            animations.  This means that instead of changing the character each time the man 
+            moves, I simply display a different character.  Doing this means that only two 
+            bytes (moving the cursor to the character and the new character to display) have to 
+            be sent to the LCD.  If animation was accomplished by redefining the characters, 
+            then ten characters would have to be sent to the LCD (one to move into the CGRAM
+            space, the eight defining characters and an instruction returning to display RAM).  
+            If multiple characters are going to be used or more than eight pictures for the 
+            animation, then you will have to rewrite the character each time.  </p><p>
+            <img src="lcd_files/lcd_uf2.gif" align="right" border="0">
+            </p><p align="left">The user defined character line information is saved in the LCD's 
+            "CGRAM" area.  This sixty four bytes of memory is accessed using the "Move Cursor
+            into CGRAM" instruction in a similar manner to that of moving the cursor to a 
+            specific address in the memory with one important difference.  </p><p>
+            </p><p align="left">This difference is that each character starts at eigth times it's 
+            character value.  This means that user definable character 0 has it's data starting
+            at address 0 of the CGRAM, character 1 starts at address 8, character 2 starts at
+            address 0x010 (16) and so on.  To get a specific line within the user definable 
+            character, its offset from the top (the top line has an offset of 0) is added to 
+            the starting address.  In most applications, characters are written to all at one 
+            time with character 0 first.  In this case, the instruction 0x040 is written to the 
+            LCD followed by all the user-defined characters.  </p><p>
+            </p><p align="left">A special note for Wirz Electronics "SLI-OEM" users.  When the 
+            new characters are defined, it is a good idea to make sure that the upper three
+            bits are set in the user defined character byte.  When the "Move Cursor into CGRAM"
+            instruction is received, the SLI-OEM goes into a special mode where the character 
+            row counter is not updated when a new character is received.  This mode is turned 
+            off when a new instruction is sent to the SLI-OEM or an ASCII "Backspace", 
+            "Carriage Return", "Line Feed" or "Form Feed" character is received.  Since all 
+            these characters are valid LCD user defined character line definitions, you will
+            find that the SLI-OEM is not interpreting the data correctly.  If I was making the
+            "Man" symbol above for displaying on the SLI-OEM, I would use the byte 0x0EE for the 
+            first line instead of 0x00E.  
+            <img src="lcd_files/lcdcon.gif" align="right" border="0">
+            </p><p align="left">The last aspect of the LCD to discuss is how to specify a 
+            contrast voltage to the Display.  I typically use a potentiometer wired as a 
+            voltage divider.  This will provide an easily variable voltage between 
+            Ground and Vcc, which will be used to specify the contrast (or "darkness") of 
+            the characters on the LCD screen.  You may find that different LCDs work differently
+            with lower voltages providing darker characters in some and higher voltages do the
+            same thing in others.  </p><p>
+            </p><p align="left">There are a variety of different ways of wiring up an LCD.  Above,
+            I noted that the 44780 can interface with four or eight bits.  To simplify the 
+            demands in microcontrollers, a shift register is often used (as is shown in the 
+            diagram below) to reduce the number of I/O pins to three.  
+            <img src="lcd_files/lcd3.gif" border="0">
+            </p><p align="left">This can be further reduced by using the circuit shown below in 
+            which the serial data is combined with the contents of the shift register to 
+            produce the "E" strobe at the appropriate interval.  </p><p>
+            </p><p align="left">This circuit "ANDs" (using the 1K resistor and IN914 diode) the 
+            output of the sixth "D-Flip Flop" of the 74LS174 and the "Data" bit from the 
+            device writing to the LCD to form the "E" Strobe.  This method requires one less
+            pin than the three wire interface and a few more instructions of code.  </p><p>
+            <img src="lcd_files/2wirelcd.jpg" border="0">
+            </p><p align="left">I normally
+            use a 74LS174 wired as a shift register (as is shown in the schematic diagram) 
+            instead of a serial-in/parallel-out shift register.  This circuit should work 
+            without any problems with a dedicated serial-in/parallel-out shift register chip, but the 
+            timings/clock polarities may be different.  When the 74LS174 is used, note that the 
+            data is latched on the rising (from logic "low" to "high") edge of the clock signal.  </p><p>
+            <img src="lcd_files/2wirewf.jpg" align="right" border="0">
+            </p><p align="left">In the diagram to the right, I have shown how the shift register is
+            written to for this circuit to work.  Before data can be written to it, the shift
+            register is cleared by loading every latch with zeros.  Next, a "1" (to provide the 
+            "E" Gate) is written followed by the "R/S" bit and the four data bits.  Once the 
+            is loaded in correctly, the "Data" line is pulsed to Strobe the "E" bit.  The 
+            biggest difference between the three wire and two wire interface is that the shift
+            register has to be cleared before it can be loaded and the two wire operation requires 
+            more than twice the number of clock cycles to load four bits into the LCD.  
+            </p><p align="left">I've used this circuit with the PICMicro, 8051 and AVR and it really 
+            makes the wiring of an LCD to a microcontroller very simple.  A significant 
+            advantage of using a shift register, like the two circuits shown here, 
+            data to the LCD is the lack of timing sensitivity that will be encountered.  The 
+            biggest issue to watch for is to make sure the 
+            "E" Strobe's timing is within specification (ie greater than 450 nsecs),
+            the shift register loads can be interrupted without affecting the actual write.  
+            This circuit will not work with Open-Drain only outputs (something that catches up
+            many people).  </p><p>
+            </p><p align="left">One note about the LCD's "E" Strobe is that in some documentation it is
+            specified as "high" level active while in others, it is specified as falling edge active.  
+            It <i>seems</i> to be falling edge active, which is why the 2-wire LCD interface presented
+            below works even if the line ends up being high at the end of data being shifted in.  If 
+            the falling edge is used (like in the 2-wire interface) then make sure that before the 
+            "E" line is output on "0", there is at least a 450 nsecs delay with no lines changing 
+            state.  </p><p>
+            </p><p align="left">The following "C" psuedo-code can be used for writing a nybble to the 
+            two wire circuit:
+            </p><pre>LCDNybble(char Nybble, char RS)
+{
+
+int i;
+
+
+  Data = 0;                      //  Clear the '174
+  for (i = 0; i &lt; 6; i++) {      //  Repeat for six bits
+    Clock = 1; Clock = 0;        //  Write the "0"s into the '174
+  }
+
+  Data = 1;                      //  Output the "AND" Value
+  Clock = 1; Clock = 0;
+
+  Data = RS;                     //  Output the RS Bit Value
+  Clock = 1; Clock = 0;
+
+  for (i = 0; i &lt; 4; i++) {      // Output the Nybble
+    if ((Nybble &amp; 0x008) != 0)
+      Data = 1;                  // Output the High Order Bit
+    else
+      Data = 0;
+    Clock = 1; Clock = 0;        //  Strobe the Clock
+    Nybble = Nybble &lt;&lt; 1;        // Shift up Nybble for Next Byte
+  }
+
+  Clock = 1; Clock = 0;          // Toggle the "E" Clock Bit
+
+} // End LCDNybble
+            </pre>
+            <p align="left">The table below gives a list of LCD sample code for different 
+            microcontrollers and operations discussed on this page.  Over time, I will work at 
+            filling it out with the sample assembly code for the different devices.  The microcontroller
+            circuits are very simple with just a crystal and reset resistor or capacitor.  Note the 
+            device and speed that it is running at along with the Assembler that I used.  </p><p>
+            <table border="1" width="100%">
+              <tbody><tr>
+                <th>Device</th>
+                <th>8 Bit LCD Interface</th>
+                <th>4 Bit LCD Interface</th>
+                <th>3 Wire LCD Interface</th>
+                <th>2 Wire LCD Interface</th>
+                <th>Animation</th>
+                <th>Comments</th>
+              </tr>
+              <tr bgcolor="#ffffff">
+                <td align="center">PICMicro</td>
+                <td align="center"></td>
+                <td align="center"></td>
+                <td align="center"></td>
+                <td align="center"><a class="linktext" href="http://www.myke.com/code/2wirepic.asm">2wirepic.asm</a></td>
+                <td align="center"></td>
+                <td align="center">4 MHz 16C84 for MPASM</td>
+              </tr>
+            </tbody></table>
+</p></body></html>

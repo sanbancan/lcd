@@ -1,0 +1,706 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm -->
+<HTML><HEAD><TITLE>11.19.98  Design Ideas</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><!--goodbye-->
+<STYLE>H1 {
+	FONT-SIZE: 14pt; COLOR: rgb(170,0,0); FONT-FAMILY: Times New Roman
+}
+H2 {
+	FONT-SIZE: 14pt; COLOR: rgb(0,0,0); FONT-FAMILY: Arial
+}
+H3 {
+	FONT-SIZE: 12pt; COLOR: navy; FONT-FAMILY: Times New Roman
+}
+H4 {
+	FONT-SIZE: 10pt; COLOR: rgb(0,0,128); FONT-FAMILY: Arial
+}
+H5 {
+	FONT-SIZE: 10pt; COLOR: rgb(0,0,0); FONT-FAMILY: Arial
+}
+H6 {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: rgb(170,0,0); FONT-FAMILY: Arial
+}
+P {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial
+}
+LI {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial
+}
+TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial
+}
+A:link {
+	COLOR: rgb(170,0,0)
+}
+A:active {
+	FONT-SIZE: 125%; COLOR: red
+}
+A:visited {
+	COLOR: rgb(0,0,128)
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#000080 aLink=#00ffff link=#aa0000 bgColor=#ffffff>
+<TABLE cellSpacing=0 cellPadding=0 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=middle>
+            <SCRIPT language=Javascript1.1 
+            src="11_19_98&nbsp; Design Ideas_files/;dcopt=ist;abr=!webtv;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024">
+</SCRIPT>
+
+            <SCRIPT>
+<!--
+if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || (navigator.userAgent.indexOf("WebTV") >= 0))
+{
+document.write('<a href="http://ad.doubleclick.net/jump/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?">');
+document.write('<img src="http://ad.doubleclick.net/ad/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?" width="468" height="60" border="0"></a>');
+}
+//-->
+</SCRIPT>
+            <NOSCRIPT><!-- for non JavaScript browsers and Netscape 2.x --><A 
+            href="http://ad.doubleclick.net/jump/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?"><IMG 
+            height=60 
+            src="11_19_98&nbsp; Design Ideas_files/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024.gif" 
+            width=468 border=0> </A></NOSCRIPT></TD></TR></TBODY></TABLE><BR></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left>
+      <TABLE cellSpacing=1 cellPadding=2 width=640 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top colSpan=3>
+            <DIV align=left>
+            <TABLE cellSpacing=1 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD><A href="http://www.reed-electronics.com/"><IMG height=115 
+                  alt="EDN ACCESS" 
+                  src="11_19_98&nbsp; Design Ideas_files/masthead.gif" width=180 
+                  border=0></A></TD>
+                <TD vAlign=top align=right width=125></TD>
+                <TD vAlign=top align=left width="20%">
+                  <TABLE borderColor=#aa0000 cellPadding=2 border=1>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <P align=center><STRONG><FONT size=4><A 
+                        href="http://www.reed-electronics.com/infoaccess.asp">InfoAccess</A></FONT></STRONG> 
+                        </P>
+                        <H4 align=center>Request more information from 
+                        vendors—fast!</H4></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+            <TABLE cellPadding=2 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=2 height=10></TD></TR>
+              <TR>
+                <TD><IMG height=55 alt="DESIGN IDEAS" 
+                  src="11_19_98&nbsp; Design Ideas_files/di.gif" width=467></TD>
+                <TD>
+                  <P align=center><STRONG><FONT 
+                  color=#000000><BIG>11.19.98</BIG></FONT><FONT 
+                  color=#aa0000><BR><A 
+                  href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/24di.pdf"><IMG 
+                  height=16 alt="DOWNLOAD PDF VERSION" 
+                  src="11_19_98&nbsp; Design Ideas_files/pdf.gif" width=131 
+                  border=0></A></FONT></STRONG></P></TD></TR>
+              <TR>
+                <TD colSpan=2 height=10></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top></TD>
+          <TD vAlign=top></TD>
+          <TD vAlign=top width="100%">
+            <DIV align=right>
+            <TABLE borderColor=#000080 cellSpacing=0 cellPadding=2 width=200 
+            align=right border=1>
+              <TBODY>
+              <TR>
+                <TD>
+                  <UL>
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#voltage">Voltage 
+                    reference sets current limit</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#accelerometer">Accelerometer 
+                    output gives temperature info</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#comparator">Voltage 
+                    comparator forms pulse demodulator</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#watchdog">Watchdog-reset 
+                    catcher aids embedded-system debugging</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#easily">Easily 
+                    display bit-map images on small-graphic LCDs</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#cmos">CMOS 
+                    inverter VCO tunes octave to UHF</A> 
+                    <LI><A 
+                    href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#pushbutton">Pushbutton 
+                    or logic controls nonvolatile DAC</A> 
+            </LI></UL></TD></TR></TBODY></TABLE></DIV>
+            <H2><A name=low>Voltage reference sets current limit </A></H2>
+            <H4>Joe Engle, Burr-Brown Corp, Tucson, AZ </H4>
+            <P>Power op amps have a real need for active output-current 
+            limiting. Most power-amplifier designs rely on the voltage drop 
+            across a user-supplied sense resistor to turn on an internal 
+            transistor. This method has several drawbacks, notably, an inability 
+            to change the current-limit point under program control. The 
+            current-limit circuit in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22701.pdf">Figure 
+            1</A> allows you to establish the setpoint by applying a voltage to 
+            one of the amplifier's pins. With this design, it is possible to set 
+            the current-limit point with the output of a DAC, possibly under the 
+            control of an embedded ?C. </P>
+            <P>The <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=OPA547">OPA547</A> 
+            is a true op amp; thus, it does not need a connection to power 
+            ground. The current-limit-setting voltage for this IC uses the 
+            negative supply as a reference. For single-supply applications in 
+            which the negative supply is ground, this referencing technique 
+            presents no problem, but for circuits that use a negative supply 
+            below ground potential, you need a different technique. The circuit 
+            in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22701.pdf">Figure 
+            1</A> shifts the reference potential for the control signal from 
+            ground to the negative supply. For simplicity, <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22701.pdf">Figure 
+            1</A> shows the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=OPA547">OPA547</A> 
+            as an inverting amplifier, but you can use any op-amp application 
+            circuit. The circuit uses an <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=OPA340">OPA340</A> 
+            for reference shifting because it is capable of rail-to-rail 
+            operation on both input and output. </P>
+            <P>To understand the operation of the reference-shifting circuit, 
+            first recognize that the R<SUB>3</SUB>-to-R<SUB>4</SUB> voltage 
+            divider sets the voltage at IC<SUB>2</SUB>'s Pin 3. Thus, the 
+            intermediate voltage (V<SUB>i</SUB>), as measured from the negative 
+            supply, is given by </P>
+            <P align=center><IMG height=34 alt="24die1.gif (1022 bytes)" 
+            src="11_19_98&nbsp; Design Ideas_files/24die1.gif" width=89><A 
+            name=eq1> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <STRONG>(1)</STRONG></A></P>
+            <P>To find the voltage at IC<SUB>2</SUB>'s pin 2, note that the 
+            current through R<SUB>3</SUB> equals the sum of the currents in 
+            R<SUB>1</SUB> and R<SUB>5</SUB>, leading to the following 
+            expression: </P>
+            <P align=center><IMG height=34 alt="24die2.gif (1097 bytes)" 
+            src="11_19_98&nbsp; Design Ideas_files/24die2.gif" width=119><A 
+            name=eq2> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <STRONG>(2)</STRONG></A></P>
+            <DIV align=right>
+            <TABLE cellPadding=2 align=right bgColor=#000080 border=1>
+              <TBODY>
+              <TR>
+                <TD bgColor=#c0c0c0>
+                  <H2 align=center><FONT color=#000080>&nbsp;<A 
+                  href="http://www.reed-electronics.com/di_entry.htm"><SMALL><SMALL>Click 
+                  here for a<BR>Design Idea<BR>submission 
+                  form</SMALL></SMALL></A></FONT></H2></TD></TR></TBODY></TABLE></DIV>
+            <P>As long as op amp IC<SUB>2</SUB> operates in the linear region, 
+            the voltage at Pin 2 equals the voltage at Pin 3, so the value of 
+            V<SUB>i</SUB> in each of the expressions is equal. When you 
+            substitute the first term into the second, set R<SUB>1</SUB> equal 
+            to R<SUB>2</SUB>, and combine terms, the resulting expression is 
+</P>
+            <P align=center><IMG height=57 alt="24die3.gif (1329 bytes)" 
+            src="11_19_98&nbsp; Design Ideas_files/24die3.gif" width=164><A 
+            name=eq3> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <STRONG>(3)</STRONG></A></P>
+            <P>In <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22701.pdf">Figure 
+            1</A>, V<SUB>1</SUB> connects to ground, and you obtain unity gain 
+            by setting the coefficient of V<SUB>C</SUB> in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#eq3">Equation 
+            3</A> to 1. If you expand and combine terms, the expression becomes 
+            </P>
+            <P align=center><IMG height=43 alt="24die4.gif (1018 bytes)" 
+            src="11_19_98&nbsp; Design Ideas_files/24die4.gif" width=67><A 
+            name=eq4> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <STRONG>(4)</STRONG></A></P>
+            <P>To change the scalar relationship between the controlling voltage 
+            applied to the power op amp, simply set the coefficient term to the 
+            desired value and solve <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#eq3">Equation 
+            3</A>. To determine the resistor values, consider the worst-case 
+            common-mode voltage that IC<SUB>2</SUB> can encounter. <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=OPA547">OPA547</A> 
+            allows a maximum supply differential of 60V. In an extreme case, the 
+            positive supply of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=OPA547">OPA547</A> 
+            connects to ground and the current-limit set voltage is +5V. <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#eq1">Equation 
+            1</A> becomes </P>
+            <P align=center><IMG height=53 alt="24die5.gif (1037 bytes)" 
+            src="11_19_98&nbsp; Design Ideas_files/24die5.gif" width=77><A 
+            name=eq5> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <STRONG>(5)</STRONG></A></P>
+            <P>which reduces to R<SUB>3</SUB>=12R<SUB>4</SUB>. Applying this 
+            ratio to <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#eq4">Equation 
+            4</A> and setting R<SUB>3</SUB> equal to R<SUB>1</SUB> produces 
+            R<SUB>1</SUB>=11R<SUB>5</SUB>. Selecting from a list of standard 1% 
+            resistor values yields the values in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22701.pdf">Figure 
+            1</A>. Note that the stage operates with a common-mode voltage that 
+            equals the negative supply. Errors in the resistor values can 
+            produce a significant offset shift. With this circuit, it is 
+            possible to set the current limit of the power op amp to a known, 
+            repeatable value under program control. (DI #2270).</P>
+            <HR noShade>
+
+            <H2><A name=accelerometer>Accelerometer output gives temperature 
+            info </A></H2>
+            <H4>Harvey Weinberg, Analog Devices Inc, Cambridge, MA </H4>
+            <P>The <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=ADXL202">ADXL202</A> 
+            dual-axis micromachined accelerometer from Analog Devices (Norwood, 
+            MA) is appropriate for high-resolution applications. In these 
+            applications, you sometimes need to know the ambient temperature for 
+            control purposes or for circuit-drift compensation. The scheme in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20DI2271.pdf">Figure 
+            1</A> offers a novel way to convey temperature information to the 
+            system ?C without the need for an A/D converter or any additional 
+            I/O pins. The <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=ADXL202">ADXL202</A> 
+            delivers two PWM signals that are proportional to the acceleration 
+            in its X and Y axes. Current in the R<SUB>SET</SUB> resistor sets 
+            the period of the PWM signals. </P>
+            <P>You can use a thermistor in series with or instead of the 
+            R<SUB>SET</SUB> resistor to vary the PWM period with temperature. 
+            However, because of the grossly nonlinear response of thermistors, 
+            the PWM period is also grossly nonlinear with temperature. In 
+            addition, the thermistor's poor sensitivity at high temperatures may 
+            be unacceptable. Although R<SUB>SET</SUB> normally connects to 
+            ground, you can connect it to any noise-free voltage source ranging 
+            from 0 to approximately 1.2V (at which voltage the internal current 
+            source runs out of compliance). By connecting R<SUB>SET</SUB> to the 
+            V<SUB>OUT</SUB> pin of a TMP36 temperature sensor, the PWM-period 
+            set current varies fairly linearly (within ?5?C) with temperature 
+            from ?20 to +40?C. Therefore, the PWM period varies linearly with 
+            temperature. You can easily extract temperature information from the 
+            PWM signal, because you normally measure the period to determine 
+            duty cycle. (DI #2271). </P>
+            <HR noShade>
+
+            <H2><A name=comparator>Voltage comparator forms pulse demodulator 
+            </A></H2>
+            <H4>Abel Raynus, Armatron International, Melrose, MA </H4>
+            <P>To process low-level ultrasound or radio-range pulses, you need a 
+            signal-conditioning amplifier followed by a pulse demodulator to 
+            translate the signals to dc pulses. Traditionally, you would use a 
+            diode-demodulator configuration (for example, the circuit in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22731.pdf">Figure 
+            1a</A>) with one stage of a single-supply op amp. The circuit in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22731.pdf">Figure 
+            1b</A> does the same job but uses a voltage comparator instead of a 
+            diode demodulator. The key to the method is choosing a threshold 
+            voltage (V<SUB>TH</SUB>) on the negative comparator input that is 
+            slightly higher than the dc level of the amplifier output, which is 
+            equal to or close to V<SUB>CC</SUB>/2. The 
+            R<SUB>4</SUB>-to-R<SUB>6</SUB> resistive divider determines the 
+            difference between the op-amp bias and the threshold voltage. This 
+            difference, calculated to yield an acceptable signal-to-noise 
+            voltage, is 
+            V<SUB>CC</SUB>R<SUB>5</SUB>/(R<SUB>4</SUB>+R<SUB>5</SUB>+R<SUB>6</SUB>). 
+            </P>
+            <P>Or, assuming R<SUB>4</SUB>=R<SUB>5</SUB>+R<SUB>6</SUB>, the 
+            difference is V<SUB>CC</SUB>R<SUB>5</SUB>/2R<SUB>4</SUB>. 
+            R<SUB>3</SUB> and C<SUB>2</SUB> make up a lowpass filter. This pulse 
+            demodulator has some advantages: First, its sensitivity is higher 
+            than that of a diode demodulator. A 25-mV, 40-kHz, 1-msec input 
+            pulse produces a 0.1V output pulse in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22731.pdf">Figure 
+            1a</A>'s circuit, and a 2V output pulse in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20D22731.pdf">Figure 
+            1b</A>'s circuit. Second, it's convenient and economical to use one 
+            more stage of the dual or quad op amp instead of adding discrete 
+            components. (DI #2273). </P>
+            <HR noShade>
+
+            <H2><A name=watchdog>Watchdog-reset catcher aids embedded-system 
+            debugging </A></H2>
+            <H4>Scott Newell, PCSI, Fort Smith, AR </H4>
+            <P>A simple "junk-box" circuit uses a <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A> 
+            CMOS flip-flop and a handful of passive components to determine 
+            whether random resets are the result of a blown stack or the result 
+            of the watchdog-reset circuit tripping (<A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/23DI2293.pdf">Figure 
+            1</A>). You can also use this circuit to "grab" and hold other logic 
+            level edges like memory or I/O accesses. </P>
+            <P>A logic-level rising edge at the clock input (Pin 3) of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A> 
+            clocks the flip-flop. Because the circuit holds the data input (Pin 
+            5) high, the Q output (Pin 1) goes high, which turns on the LED. 
+            Once the LED is on, the circuit ignores any further changes at the 
+            input. </P>
+            <P>R<SUB>1</SUB> and C<SUB>1</SUB> are the power-up reset for the 
+            flip-flop. At power-up, C<SUB>1</SUB> discharges, which holds the 
+            reset input (Pin 4) of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A> 
+            high, clears the Q output of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A>, 
+            and turns off the LED. C<SUB>1</SUB> charges up to the supply 
+            voltage through R<SUB>1</SUB>, taking the R input (Pin 4) low to 
+            deassert the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A> 
+            reset time. D<SUB>1</SUB> discharges C<SUB>1</SUB> quickly on 
+            power-down. S<SUB>1</SUB> is an optional reset switch. C<SUB>2</SUB> 
+            is a power-supply bypass capacitor. Don't forget to ground all 
+            unused inputs on the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A>. 
+            To reset the circuit, either momentarily close S<SUB>1</SUB> or 
+            temporarily disconnect power. </P>
+            <P>You can solder all the parts onto a BNC, which makes it easy to 
+            connect a scope probe directly to the watchdog-reset catcher. You 
+            can use a clip lead for the power line and easily steal power from 
+            the device under test. You can then connect the output of the 
+            embedded system's watchdog-reset circuit through the scope probe to 
+            the clock input of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A>. 
+            </P>
+            <P>None of the part values are critical, and many types of 
+            flip-flops can substitute for the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=4013">4013</A>. 
+            A faster flip-flop may be necessary to watch fast signals. Adding an 
+            inverter to the input would allow you to catch falling edges, such 
+            as active-low reset signals. (DI #2293) </P>
+            <HR noShade>
+
+            <H2><A name=easily>Easily display bit-map images on small-graphic 
+            LCDs </A></H2>
+            <H4>Todd Fitzsimmons, Densitron Corp, Santa Fe Springs, CA </H4>
+            <P>Combining a high-level language, such as Microsoft Windows, with 
+            low-level assembly code or C++ code allows you to display perfect 
+            bit-map pictures on your small-graphic LCD screen. You can use 
+            Microsoft Paint or any other bit-map-generating program to define 
+            and edit the picture. Unlike segmented and alphanumeric LCDs, 
+            small-graphic LCDs are fully graphical and can display logos, 
+            graphs, or any other image in addition to numbers and characters. 
+            The main hurdle to upgrading to this type of display is the software 
+            necessary to display the bit-map pictures. </P>
+            <P>To create your bit maps, you can use any available bit-map 
+            program, such as Microsoft Paint. After opening this program, select 
+            the Attribute menu. At the prompt, you enter the LCD size you are 
+            using and then choose the monochrome-bit-map option. You can now 
+            close the Attribute window and start drawing, typing, or pasting the 
+            images you want. After saving the pictures, you need to attach the 
+            bit maps to the end of your assembled or compiled program in order 
+            of their intended use. You can attach them using the COPY/B command 
+            in DOS, which differs from the regular COPY command by copying 
+            directly as a binary format without adding a byte of data at the 
+            end. </P>
+            <P>To use these attached bit maps, you need a subroutine in your 
+            program, such as the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=8051">8051</A> 
+            assembly code in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/di2295.txt">Listing 
+            1</A>, which can pull the data out of the lower memory and send it 
+            to the display. This code clocks in bit maps to the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=SED1330F">SED1330</A> 
+            controller chip on a 240X320-pixel display. If your display doesn't 
+            use the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=SED1330F">SED1330</A> 
+            chip, you can still use this code with modifications to the WRCMD 
+            and WRDATA subroutines and possibly some alterations on the 
+            direction you clock in the data. The direction in the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=SED1330F">SED1330</A> 
+            is the same as the T6963 controller chip. However, if you use the 
+            HD61830, you need to switch the direction of the data; D<SUB>7</SUB> 
+            becomes D<SUB>0</SUB>, D<SUB>6</SUB> becomes D<SUB>1</SUB>, and so 
+            on. </P>
+            <P>For a bit-map program, the first 62 bytes of data call out the 
+            protocol for the rest of the bit-map code, such as the type, size 
+            and layout of the bit map. Because you have selected the monochrome 
+            option and specified layout dimensions using a bit-map-generating 
+            program, the subroutine can skip the first 62 bytes. The 63rd byte 
+            defines the first 8 pixels in the lower left corner of the display. 
+            The following bytes go sequentially to the screen until you hit the 
+            right edge of your display. The next byte is either the first byte 
+            on the next row up on the left side or a padded zero that the 
+            bit-map program places there to maintain certain integers for row 
+            length. </P>
+            <P>Padded zeros are necessary when the number of bytes in a row are 
+            not divisible by four. If you have 16 bytes of data per row, no 
+            padded zeros are necessary. However, if there are 30 bytes per row, 
+            two padded zeros are necessary to bring the number of bytes to 32. 
+            Your internal program must disregard these zeros before going on 
+            with the 33rd byte of data (<A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24di.htm#table1">Table 
+            1</A>). </P>
+            <P>Consider the example of driving a 128X240-pixel display. You 
+            would set up your assembly code to strip off and discard the first 
+            62 bytes of data from the bit-map file. The 63rd byte is then the 
+            first byte in the lower left of the LCD. Then, the next 29 bytes of 
+            data (240/8=30) appear directly in the display. The code must then 
+            discard the next 2 bytes of padded zeros. The next byte of data then 
+            appear in the next row up and over on the left. A user continues 
+            this process until all 128 lines are completed. </P>
+            <P>If you access the upper bit-map memory by using the data pointer 
+            address in your ?P, then, when you paint the first page and 
+            increment the data pointer, you see the first byte of the next 
+            picture in your list. </P>
+            <P>An important difference between a bit map and an LCD is that, in 
+            bit-map programs, a binary 1 is an off pixel, and a binary 0 is an 
+            on pixel. So, a user must perform an exclusive-OR with FFh to 
+            properly view the bytes. Without this operation, your picture would 
+            be the inverse image of your original picture. (DI #2295) </P>
+            <TABLE cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left bgColor=#000080 colSpan=4>
+                  <H4><FONT color=#ffffff><A name=table1>TABLE 1—CORRELATION 
+                  BETWEEN BIT-MAP RESOLUTION AND PADDED 
+              ZEROS</A></FONT></H4></TD></TR>
+              <TR>
+                <TD vAlign=top align=left bgColor=#c0c0c0><STRONG>Bit-map 
+                  resolution (pixels)</STRONG></TD>
+                <TD vAlign=top align=left bgColor=#c0c0c0><STRONG>Bytes per 
+                  row</STRONG></TD>
+                <TD vAlign=top align=left bgColor=#c0c0c0><STRONG>Padded zeros 
+                  per row</STRONG></TD>
+                <TD vAlign=top align=left bgColor=#c0c0c0><STRONG>Totals 
+                  divisible by four</STRONG></TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>32X80</TD>
+                <TD vAlign=top align=left>10</TD>
+                <TD vAlign=top align=left>2</TD>
+                <TD vAlign=top align=left>12</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left bgColor=#e1f5ff>32X202</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>26</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>4</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>30</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>33X100</TD>
+                <TD vAlign=top align=left>13</TD>
+                <TD vAlign=top align=left>3</TD>
+                <TD vAlign=top align=left>16</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left bgColor=#e1f5ff>64X128</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>16</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>0</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>16</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>64X240</TD>
+                <TD vAlign=top align=left>30</TD>
+                <TD vAlign=top align=left>2</TD>
+                <TD vAlign=top align=left>32</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left bgColor=#e1f5ff>64X480</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>60</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>0</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>60</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>128X128</TD>
+                <TD vAlign=top align=left>16</TD>
+                <TD vAlign=top align=left>0</TD>
+                <TD vAlign=top align=left>16</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left bgColor=#e1f5ff>128X240</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>30</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>2</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>32</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>128xX56</TD>
+                <TD vAlign=top align=left>32</TD>
+                <TD vAlign=top align=left>0</TD>
+                <TD vAlign=top align=left>32</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left bgColor=#e1f5ff>200X640</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>80</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>0</TD>
+                <TD vAlign=top align=left bgColor=#e1f5ff>80</TD></TR>
+              <TR align=middle>
+                <TD vAlign=top align=left>240X320</TD>
+                <TD vAlign=top align=left>40</TD>
+                <TD vAlign=top align=left>0</TD>
+                <TD vAlign=top align=left>40</TD></TR></TBODY></TABLE>
+            <HR noShade>
+
+            <H2><A name=cmos>CMOS inverter VCO tunes octave to UHF </A></H2>
+            <H4>Shawn Stafford, AM Communications Inc, Quakertown, PA </H4>
+            <P>A robust and versatile vco provides a stable output to 300 MHz 
+            (<A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/23DI2294.pdf">Figure 
+            1</A>). The circuit's simplicity, unconditional stability, and 
+            consistent high-drive capability over an octave make the oscillator 
+            ideal for many applications, such as synthesized sources, local 
+            oscillators, and transmitters. The AHC logic family (Texas 
+            Instruments, <A href="http://www.ti.com/">http://www.ti.com/</A>) 
+            makes the circuit's performance possible. AHC is a relatively new 
+            line of CMOS logic whose high speeds and good noise performance 
+            allow oscillator operation into regions in which 
+            bipolar-junction-transistor and FET designs prevail. </P>
+            <P>The oscillator topology is a modified Colpitts oscillator for 
+            which two hyperabrupt varactor diodes create the capacitive divider. 
+            The SMV-1255-004 (Alpha Industries, <A 
+            href="http://www.alphaind.com/">http://www.alphaind.com/</A>) 
+            encloses two varactors in one SOT-23 package (<A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/23DI2294.pdf">Figure 
+            1a</A>). The capacitance-voltage ratio of these varactors allows 
+            linear tuning over an octave with less than 4V (<A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/23DI2294.pdf">Figure 
+            1b</A>). You can substitute other varactors as long as the loaded Q 
+            of the resonant circuit is high enough to ensure start-up 
+            oscillation, but tuning characteristics may change. The inductor is 
+            a wound spring type chosen to maximize resonant Q. Oscillation is 
+            unstable when you use a low-Q, surface-mount-wound, chip-type 
+            inductor. The 100-kOhm resistor biases the gate to provide the gain 
+            and the 180? of phase shift necessary for oscillation. A lowpass 
+            filter with a low-frequency cutoff is highly recommended on the IC's 
+            power pin. Without this filter, incidental modulation from 
+            power-supply noise and pickup easily contaminate the oscillator 
+            signal. A dedicated voltage regulator is also recommended in noisy 
+            environments, but the filter is still necessary to keep the signal 
+            as clean as possible. </P>
+            <P>With a 5V supply, current consumption is approximately 25 mA?1 or 
+            2 mA, depending on the frequency of oscillation. Using a 33 Ohm 
+            series resistor can reduce the current to 8 mA and supply enough 
+            power for reliable oscillation. The cascaded gates provide extra 
+            buffering and drive; the output resistor improves match with 
+            additional buffering. If your design needs a known constant output 
+            impedance, you can substitute a resistive match pad for the output 
+            resistor and maintain a considerable output level. <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/23DI2294.pdf">Figure 
+            1c</A> shows the drive capability over frequency at mid-VHF, as well 
+            as level variation of less than 0.5 dB over the selected octave. 
+            Temperature effects on level are minimal with less than 1-dB change 
+            over 0 to 75?C, and worst-case harmonics are always better than ?12 
+            dBc. (DI #2294) </P>
+            <HR noShade>
+
+            <H2><A name=pushbutton>Pushbutton or logic controls nonvolatile DAC 
+            </A></H2>
+            <H4>Stephen Woodward, University of North Carolina, Chapel Hill, NC 
+            </H4>
+            <P>For manual control of analog signals, it's hard to beat the 
+            venerable precision multiturn potentiometer's simplicity, 
+            resolution, and power-off nonvolatility. When digital control of an 
+            analog parameter is the design objective, a universe of DACs is 
+            available to the designer. The circuit in <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/pdfs/20DI2269.pdf">Figure 
+            1</A>, however, has manual-pushbutton and CMOS/TTL-compatible 
+            digital interfaces to a 10-bit, nonvolatile, two- or four-quadrant 
+            multiplying DAC. The heart of the circuit is the Xicor (Milpitas, 
+            CA) <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=X9511">X9511</A> 
+            PushPot series of digitally controlled potentiometers. These devices 
+            implement a convenient up/down response to either ground-referenced 
+            contact closures (with built-in debounce and pullup provisions) or 
+            open-collector/drain digital pulses. </P>
+            <P>Other useful features of these digital potentiometers include a 
+            ?5V analog-signal range and automatic storage and retrieval of 
+            settings with power-on/off cycles via an on-chip EEPROM. The 
+            potentiometer's only shortcoming in this context that its resolution 
+            is inadequate for precision applications (only 32 distinct settings, 
+            equivalent to a mere five bits). To overcome this limitation, the 
+            circuit combines two PushPots with a summing op-amp buffer to 
+            achieve nearly 10-bit resolution. IC<SUB>1</SUB> provides a weighted 
+            sum of the wiper voltages of P<SUB>2</SUB> (coarse input) and 
+            P<SUB>1</SUB> (fine input) in the ratio of 25.5-to-1. This operation 
+            provides a composite resolution of 32?(25.5+1)=848 distinct 
+            settings, equivalent to 9.7 bits. </P>
+            <P>The missing 0.3 bits are lost to the good-but-still-only-finite 
+            differential linearity of the <A 
+            href="http://www.questlink.com/keyword.htm?proc=keyword&amp;view=list&amp;elmt=edn&amp;kwrd=X9511">X9511</A> 
+            (Xicor specifies ?0.2 LSBs) and the consequent need to give a 
+            less-than-ideal weight (32X0.8 instead of 32) to P<SUB>2</SUB> to 
+            guarantee overall DAC monotonicity. The resultant two-quadrant 
+            (R<SUB>2</SUB>=10 kV, R<SUB>3</SUB> omitted) gain equation is 
+            V<SUB>OUT</SUB>/V<SUB>IN</SUB>=(25.5XP<SUB>2</SUB>+P<SUB>1</SUB>?31)/761. 
+            Thus, two-quadrant gain runs from ?0.04 to 1.04 in steps of 0.0013, 
+            as P<SUB>1</SUB> and P<SUB>2</SUB> settings vary from (0,0) to 
+            (31,31). </P>
+            <P>Optionally, you can obtain four-quadrant multiplication by adding 
+            one resistor to the circuit, with the value 
+            R<SUB>3</SUB>=R<SUB>2</SUB>=20 kV. Gain then becomes 
+            V<SUB>OUT</SUB>/V<SUB>IN</SUB>= 
+            (25.5XP<SUB>2</SUB>+P<SUB>1</SUB>?410)/380 and ranges from ?1.08 to 
+            1.08 in steps of 0.0026, as P<SUB>1</SUB> and P<SUB>2</SUB> vary 
+            from 0 to 31. The loading of P<SUB>1</SUB> by R<SUB>1</SUB> is light 
+            enough to produce a negligible effect on linearity. Connecting Pin 7 
+            (automatic store enable) of P<SUB>1</SUB> and Pin 7 of P<SUB>2</SUB> 
+            to ground enables automatic storage of potentiometer settings to 
+            internal EEPROM upon power-down. The circuit then automatically 
+            retrieves the settings on power-up. (DI #2269). <!-- This document created using BeyondPress(TM) 4.0 For Windows --></P></TD></TR>
+        <TR>
+          <TD vAlign=top align=middle colSpan=3>
+            <HR color=#000000 noShade SIZE=1>
+
+            <P><FONT face=Arial size=2><STRONG>| <A 
+            href="http://www.reed-electronics.com/">EDN Access</A> | <A 
+            href="http://www.reed-electronics.com/feedback.asp">Feedback</A> | 
+            <A 
+            href="http://www.reed-electronics.com/ednmag/archives/1998/111998/24toc.asp">Table 
+            of Contents</A> |</STRONG></FONT></P>
+            <HR color=#000000 noShade SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top colSpan=3><FONT face=Arial size=1>Copyright ? 1998 
+            EDN Magazine, <A href="http://www.reed-electronics.com/">EDN 
+            Access</A>. EDN is a registered trademark of Reed Properties Inc, 
+            used under license. EDN is published by <A 
+            href="http://www.cahners.com/">Cahners Business Information</A>, a 
+            unit of Reed Elsevier Inc. </FONT></TD></TR></TBODY></TABLE></DIV></TD>
+    <TD vAlign=top align=middle width=150>
+      <TABLE cellSpacing=0 cellPadding=0 width=146 border=0>
+        <TBODY>
+        <TR>
+          <TD height=3></TD></TR></TBODY></TABLE>
+      <DIV align=center>
+      <SCRIPT language=Javascript1.1 
+      src="11_19_98&nbsp; Design Ideas_files/;abr=!webtv;type=sky;pos=1;lay=webzine;sz=120x600;ord=1094190024">
+</SCRIPT>
+
+      <SCRIPT>
+<!--
+if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || (navigator.userAgent.indexOf("WebTV") >= 0))
+{
+document.write('<a href="http://ad.doubleclick.net/jump/edn.rbi/;type=sky;pos=1;lay=webzine;sz=120x600;ord=1094190024?">');
+document.write('<img src="http://ad.doubleclick.net/ad/edn.rbi/;type=sky;pos=1;lay=webzine;sz=120x600;ord=1094190024?" width="120" height="600" border="0"></a>');
+}
+//-->
+</SCRIPT>
+      <NOSCRIPT><!-- for non JavaScript browsers and Netscape 2.x --><A 
+      href="http://ad.doubleclick.net/jump/edn.rbi/;type=sky;pos=1;lay=webzine;sz=120x600;ord=1094190024?"><IMG 
+      height=600 
+      src="11_19_98&nbsp; Design Ideas_files/;type=sky;pos=1;lay=webzine;sz=120x600;ord=1094190024.gif" 
+      width=120 border=0> </A></NOSCRIPT><BR><BR></DIV></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=middle>
+            <SCRIPT language=Javascript1.1 
+            src="11_19_98&nbsp; Design Ideas_files/;dcopt=ist;abr=!webtv;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024">
+</SCRIPT>
+
+            <SCRIPT>
+<!--
+if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || (navigator.userAgent.indexOf("WebTV") >= 0))
+{
+document.write('<a href="http://ad.doubleclick.net/jump/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?">');
+document.write('<img src="http://ad.doubleclick.net/ad/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?" width="468" height="60" border="0"></a>');
+}
+//-->
+</SCRIPT>
+            <NOSCRIPT><!-- for non JavaScript browsers and Netscape 2.x --><A 
+            href="http://ad.doubleclick.net/jump/edn.rbi/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024?"><IMG 
+            height=60 
+            src="11_19_98&nbsp; Design Ideas_files/;type=cegbanner;pos=1;desc=flat;sz=468x60;ord=1094190024.gif" 
+            width=468 border=0> 
+</A></NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>

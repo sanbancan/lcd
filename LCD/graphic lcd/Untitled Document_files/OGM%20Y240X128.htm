@@ -1,0 +1,2445 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/TR/REC-html40" xmlns:o = 
+"urn:schemas-microsoft-com:office:office" xmlns:w = 
+"urn:schemas-microsoft-com:office:word"><HEAD><TITLE>;******************************************************************************</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content=Word.Document name=ProgId>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<META content="Microsoft Word 9" name=Originator><LINK 
+href="./OGM%20Y240X128_files/filelist.xml" rel=File-List>
+<STYLE>@font-face {
+	font-family: MS Mincho;
+}
+@font-face {
+	font-family: @MS Mincho;
+}
+@page Section1 {size: 8.5in 11.0in; margin: 1.0in 65.95pt 1.0in 65.95pt; mso-header-margin: .5in; mso-footer-margin: .5in; mso-paper-source: 0; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-fareast-font-family: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-fareast-font-family: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-fareast-font-family: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan
+}
+P.MsoPlainText {
+	FONT-SIZE: 10pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Courier New"; mso-fareast-font-family: "Times New Roman"; mso-pagination: widow-orphan
+}
+LI.MsoPlainText {
+	FONT-SIZE: 10pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Courier New"; mso-fareast-font-family: "Times New Roman"; mso-pagination: widow-orphan
+}
+DIV.MsoPlainText {
+	FONT-SIZE: 10pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Courier New"; mso-fareast-font-family: "Times New Roman"; mso-pagination: widow-orphan
+}
+DIV.Section1 {
+	page: Section1
+}
+</STYLE>
+</HEAD>
+<BODY lang=EN-US style="tab-interval: .5in">
+<DIV class=Section1>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+PROGRAM FOR CONTROLLING THE DISPLAY MODULE WITH lC7981 SANYO CONTROLLER USING 
+89C52<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>&amp; LCD 
+CONTROLLER<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; DATE 
+: 06 AUG 1999.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; The 
+following program first of all sets the LCD Module in the TEXT 
+Mode.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; It 
+starts with the message "STARTING TEXT MODE..."<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; Then 
+it generates all the characters available in the INTERNAL CG 
+RAM.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; After 
+having generated the said characters, the display mode is set 
+to<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+GRAPHIC Mode when the following message has appeared<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+"WAIT... INITIALIZING GRAPHIC MODE"<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; In 
+the GRAPHIC Mode the display is Blanked first, alternate lines are 
+<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; shown 
+for next two cycles, the screen is then Blacked out.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; The 
+display is Blanked again to show the message "TESTING 
+OVER..."<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>THE PIN CONNECTIONS FOR 
+THE LCD CONTROLLER AND 89C52 ARE AS GIVEN BELOW<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>---------------------------------------------------------------<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>PIN NO. OF<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>20 PIN CONNECTOR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>89C52 PIN 
+CONNECTIONS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>AND CONNECTION TO LCD 
+CONTROLLER<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>&lt;---&gt;as available 
+in the Hardware<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>============================<SPAN style="mso-tab-count: 1">&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>============================<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>1 <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Vss<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>GND<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>2 <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>= <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>VDD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Vcc<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>3<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Vo<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>-<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>4<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>RS<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P2.0<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>5<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>R/W!<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>WR! ( P3.6 
+)<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>6<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>E<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>The O/P of a NAND 
+Gate with<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>RD! 
+&amp; WR! of 89C52 as I/Ps of<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>the 
+NAND Gate. ( RD! = P3.7 )<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>This 
+signal is meant for latch.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>7 - 14<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DB0 - DB7<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P0.0 - 
+P0.7<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>15<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CS!<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P2.1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>16<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>RES!<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P3.1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>17<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Vee<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>-<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>18<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>NC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>-<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>19<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>NC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>-<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>20<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>=<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>NC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>-<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; SPACE 
+TO DEFINE THE CONSTANTS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">R3_2<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>1AH<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CONST FOR 
+DELAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DATA_REG<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>1BH<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CONST FOR 
+DELAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+RESPECTIVE CONSTANTS FOR TEXT MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MODE<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>3CH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">PITCH_DT<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>75H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">NUMCHR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>27H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">POSN<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>07H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DPST_ADD_LO<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DPST_ADD_HI<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCRN_LO<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>80H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCRN_HI<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>02H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">ST_CHAR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>20H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+RESPECTIVE CONSTANTS FOR GRAPHIC MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MODE_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>32H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">PITCH_DT_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>77H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">NUMCHR_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>1DH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DPST_ADD_LO_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DPST_ADD_HI_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCRN_LO_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>00H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCRN_HI_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>0FH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">ST_CHAR_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>01H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">LAST_CHAR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>29H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CODE FOR THE 
+LAST CHAR. TO BE SENT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DISP_DATA<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>30H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CRSR_LO<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>31H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CRSR_HI<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>32H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MODE_SET<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>34H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; TXT = 00H ; GPH 
+= 0FFH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCREEN1<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>35H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">SCREEN<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>36H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHAR_CODE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>37H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">LST_CHR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>EQU<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>38H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;CODE 
+STARTS HERE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ORG<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>0000H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JMP<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>POWER_ON<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; ALL 
+THE PROCEDURES ARE WRITTEN HERE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>DELAY<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>******************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;DELAY 
+1 SECOND<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;***************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DLY1S:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>PUSH<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MOV<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B,#04H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DREP1:<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>PUSH<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MOV<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B,#0FFH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DREP:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CALL<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DJNZ<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>B,DREP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>POP<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DJNZ<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>B,DREP1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>POP<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">;DELAY 
+FOR 1 msec<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;****************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DLY1MS:<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CALL<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN>DELAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;****************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;VARIABLE COUNT 
+DELAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;***************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">_DELAY:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DELAY:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">DE_LAY: 
+PUSH<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MOV<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B,#184<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DLYLOOP:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DJNZ<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B,DLYLOOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>POP<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>B<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;**************************<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>DELAY ENDS<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>**********************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">INIT_DISP:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CHIP 
+SELECT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SETTING RESET 
+PIN HIGH FOR A PULSE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; GIVING RESET 
+SIGNAL TO THE DISPLAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+THRU PORT PIN 3.1 (ACTIVE LOW)<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; RESET PIN TAKEN 
+HIGH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; HIGH SIGNAL FOR 
+GPH. MOD. READ<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; DISABLE 
+CHIP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">BUSY_CHK:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P0,#0FFH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.0<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SETTING RS = 1 
+FOR INSTRUCTION<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.7<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; FOR ENABLE 
+SIGNAL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; RD SIGNAL FOR 
+GRAPHIC MODULE R/W!<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CHIP 
+SELECT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">BUSY:<SPAN 
+style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>A,P0<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; GET 
+STATUS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P0.7,BUSY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; DISABLE CHIP 
+SELECT FOR GPH. MOD.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.7<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; MAKING ENABLE 
+SIG. INACTIVE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">INST_WR:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P0,A<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.0<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SETTING RS = 1 
+FOR INSTRUCTION<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; WRITE SIGNAL 
+FOR GPH. MOD. R/W! AS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+WELL AS ENABLING ENABLE SIGNAL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CHIP 
+SELECT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; DISABLE 
+CHIP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; WRITE INACTIVE 
+THRU R/W! = 1 AS WELL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; AS 
+DISABLING ENABLE SIGNAL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DATA_WR:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P0,A<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.0<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SETTING RS = 0 
+FOR DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; WRITE SIGNAL 
+FOR GPH. MOD. R/W! AS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+WELL AS ENABLING ENABLE SIGNAL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; CHIP 
+SELECT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P2.1<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; DISABLE 
+CHIP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>P3.6<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; WRITE INACTIVE 
+THRU R/W! = 1 AS WELL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; AS 
+DISABLING ENABLE SIGNAL<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1MS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHK_MODE:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>C<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; TEXT MODE IF 
+CARRY SET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,MODE_SET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CJNE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#00H,END_CHK<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SETB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>C<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; GRAPHIC MODE IF 
+CARRY RESET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">END_CHK:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHG_SCREEN:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>SCREEN1,#SCRN_HI_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; LOAD SCREEN 
+SIZE FOR GPH.MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>SCREEN,#SCRN_LO_G<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHANGE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>SCREEN1,#SCRN_HI<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; LOAD SCREEN 
+SIZE FOR TXT.MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>SCREEN,#SCRN_LO<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHANGE:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DP_MODE:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+THIS ROUTINE SETS THE MODE IN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; WHICH THE GPH.MODULE IS TO 
+BE RUN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#MODE_G<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CHG_DPMOD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; CARRY SET IN TEXT 
+MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHG_DPMOD:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHR_PITCH:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; THE ROUTINE SETS THE 
+CHAR.PITCH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#01H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#PITCH_DT_G<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CHG_PITCH<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; CARRY SET IN TEXT 
+MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#PITCH_DT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHG_PITCH:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">NUM_CHAR:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; NO.OF CHAR'S ARE 
+SET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#02H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#NUMCHR_G<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CHG_NUMCHR<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN>; CARRY SET IN TEXT 
+MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#NUMCHR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHG_NUMCHR:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">TIME_DIV:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>BUSY_CHK<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#03H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#7FH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CRSR_POS:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; CURSOR POSN ( VALID FOR 
+TXT.MODE ) IS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>A,#04H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+SET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#POSN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DP_ST_ADD:<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+DISPLAY START ADDRESS IS SET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; TO START THE DISPLAY FROM 
+THE DESIRED<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+LOCATION.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#08H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#DPST_ADD_LO<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>BUSY_CHK<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#09H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#DPST_ADD_HI<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CRSR_ADD:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; THIS SETS THE CURSOR FROM 
+THE PT.<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+WHERE THE DISPLAY IS TO START<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#0AH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,CRSR_LO<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>BUSY_CHK<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#0BH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,CRSR_HI<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">WR_DPDATA:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>BUSY_CHK<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; WRITES THE DATA TO THE 
+SCREEN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#0CH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INST_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,DISP_DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DATA_WR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CLR_DISP:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+CLEARS THE DISPLAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHG_SCREEN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2,SCREEN1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>INC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R1,SCREEN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>REP2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">REP1:<SPAN 
+style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DISP_DATA,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>WR_DPDATA<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; WRITE DISPLAY 
+DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>R1,REP1<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2,REP1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">REP2:<SPAN 
+style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DISP_DATA,#20H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>WR_DPDATA<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; WRITE DISPLAY 
+DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R1,REP2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2,REP2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">MESSAGE:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; 
+USED TO DISPLAY MESSAGES<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DO_NTHG<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CONT_DSP:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOVC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,@A+DPTR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CJNE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>A,#10H,PROCEED<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">DO_NTHG:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">PROCEED:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DISP_DATA,A<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>WR_DPDATA<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; WRITE DISPLAY 
+DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>INC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DPTR<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JMP<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CONT_DSP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>RET<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;*************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'">; 
+PROCEDURES END HERE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;******************************************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">POWER_ON:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>R1,#0FFH<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; POWER ON 
+DELAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">P_DLY:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R7,#0FFH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">P_DLY1:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R7,P_DLY1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R1,P_DLY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CLR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>P1.0<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SP,#050H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; INITIALIZING THE STACK 
+POINTER<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>IE,#00H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; DISABLE ALL 
+INTERRUPTS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>PSW,#00H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; CLEAR THE 
+PSW<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R5,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MODE_SET,#00H<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SET TEXT 
+MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CONTINUE:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INIT_DISP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DP_MODE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; SET DISPLAY 
+MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CHR_PITCH<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; SET CHAR 
+PITCH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>NUM_CHAR<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET NO. OF 
+CHARACTERS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>TIME_DIV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET NO. OF TIME 
+DIVISIONS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_POS<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+POSITION<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DP_ST_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; SET DISPLAY START 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CLR_DISP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#0F4H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DPTR,#CHAR_TAB<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MESSAGE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; MSG -&gt; 
+'STARTING TEXT MODE...'<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHK_MODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R3,#ST_CHAR_G<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; LOAD THE 
+STARTING CHAR.FOR THE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>JNC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>NXT_CD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; RESPECTIVE MODE 
+OF DISPLAY<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>R3,#ST_CHAR<SPAN 
+style="mso-tab-count: 1"> </SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">NXT_CD:<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHG_SCREEN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2,SCREEN1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>INC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R1,SCREEN<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHAR_CODE,R3<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">REP:<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DISP_DATA,CHAR_CODE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>WR_DPDATA<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>; WRITE DISPLAY 
+DATA<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>R1,REP<SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DJNZ<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R2,REP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>INC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R3<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CJNE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R3,#LAST_CHAR,NXT_CD<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CLR_DISP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#0F4H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DPTR,#CHAR_TAB1<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MESSAGE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; MSG -&gt; 
+'WAIT...'<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#01H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#42H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DPTR,#CHAR_TAB2<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MESSAGE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; MSG -&gt; 
+'INITIALIZING GRAPHIC MODE...'<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DLY1S<SPAN 
+style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>INC<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R5<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MODE_SET,#0FFH<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CJNE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>R5,#02H,CNT<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>INIT_DISP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>MODE_SET,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CLR_DISP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_HI,#00H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CRSR_LO,#0F4H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>CRSR_ADD<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>; SET CURSOR 
+ADDRESS<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DLY1S<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MOV<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>DPTR,#CHAR_TAB3<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LCALL<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>MESSAGE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>; MSG -&gt; 
+'TESTING OVER...'<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">STOP:<SPAN 
+style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>SJMP<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>STOP<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CNT:<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>LJMP<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CONTINUE<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHAR_TAB:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>'STARTING TEXT 
+MODE...',10H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHAR_TAB1:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>'WAIT...',10H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHAR_TAB2:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>'INITIALIZING 
+GRAPHIC MODE...',10H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">CHAR_TAB3:<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>DB<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>'TESTING 
+OVER',10H<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'">;************************************************<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN style="mso-fareast-font-family: 'MS Mincho'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>END<o:p></o:p></SPAN></P>
+<P class=MsoPlainText><SPAN 
+style="mso-fareast-font-family: 'MS Mincho'"><o:p></o:p></SPAN></P></DIV></BODY></HTML>
